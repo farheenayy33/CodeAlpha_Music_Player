@@ -4,11 +4,7 @@ A responsive and interactive music player interface built using React, TypeScrip
 
 ## Live Demo
 
-Add your deployed GitHub Pages link here after deployment:
-
-```text
-https://github.com/farheenayy33/CodeAlpha_Music_Player.git
-```
+https://musicplayer2006.netlify.app/
 
 ## Tech Stack
 
