@@ -146,4 +146,6 @@ git push -u origin main
 
 ## Author
 
-Created as part of the CodeAlpha Frontend Development tasks.
+<p align="center">
+  Created with ❤️ by <strong>Farheen Laraib</strong>
+</p>
