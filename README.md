@@ -7,7 +7,7 @@ A responsive and interactive music player interface built using React, TypeScrip
 Add your deployed GitHub Pages link here after deployment:
 
 ```text
-https://your-username.github.io/your-repository-name/
+https://github.com/farheenayy33/CodeAlpha_Music_Player.git
 ```
 
 ## Tech Stack
@@ -50,7 +50,7 @@ CodeAlpha_Music_player/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/your-repository-name.git
+git clone https://github.com/farheenayy33/CodeAlpha_Music_Player.git
 cd your-repository-name
 ```
 
@@ -130,7 +130,7 @@ After a successful build, the production files will be available in:
 dist/
 ```
 
-## Deploy to GitHub Pages
+## Deploy to GitHub 
 
 ### 1. Push the project to GitHub
 
@@ -139,138 +139,10 @@ git init
 git add .
 git commit -m "Initial music player project"
 git branch -M main
-git remote add origin https://github.com/your-username/your-repository-name.git
+git remote add origin https://github.com/user_name/CodeAlpha_Music_Player.git
 git push -u origin main
 ```
 
-### 2. Configure Vite for GitHub Pages
-
-If you deploy to a repository page, update `vite.config.ts` and set `base` to your repository name:
-
-```ts
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-
-export default defineConfig({
-  base: "/your-repository-name/",
-  plugins: [react()],
-});
-```
-
-For a user or organization site such as `your-username.github.io`, use:
-
-```ts
-export default defineConfig({
-  base: "/",
-  plugins: [react()],
-});
-```
-
-### 3. Add GitHub Pages workflow
-
-Create this file:
-
-```text
-.github/workflows/deploy.yml
-```
-
-Add the following workflow:
-
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-```
-
-If this app is inside the `CodeAlpha_Music_player` subfolder of your repository, adjust the workflow commands:
-
-```yaml
-- name: Install dependencies
-  run: npm ci
-  working-directory: CodeAlpha_Music_player
-
-- name: Build
-  run: npm run build
-  working-directory: CodeAlpha_Music_player
-
-- name: Upload artifact
-  uses: actions/upload-pages-artifact@v3
-  with:
-    path: ./CodeAlpha_Music_player/dist
-```
-
-### 4. Enable GitHub Pages
-
-1. Open your GitHub repository.
-2. Go to `Settings`.
-3. Open `Pages`.
-4. Under `Build and deployment`, choose `GitHub Actions`.
-5. Push your code to the `main` branch.
-6. Wait for the deploy workflow to finish.
-
-Your app will be available at:
-
-```text
-https://your-username.github.io/your-repository-name/
-```
-
-## Notes
-
-- Do not commit `node_modules`.
-- Commit `package.json` and `package-lock.json` so GitHub Actions can install exact dependencies.
-- Commit the `public/audio` and `public/covers` folders if you want the demo tracks and covers to work immediately after deployment.
-- If audio does not autoplay immediately, that is normal browser behavior. Users usually need to press play once before autoplay can continue.
 
 ## Author
 
