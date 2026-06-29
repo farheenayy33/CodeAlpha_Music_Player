@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/albumart.tsx","./src/components/iconbutton.tsx","./src/components/musicplayer.tsx","./src/components/playlist.tsx","./src/components/progressbar.tsx","./src/data/tracks.ts","./src/lib/format.ts","./src/store/hooks.ts","./src/store/index.ts","./src/store/playerslice.ts"],"version":"5.8.3"}
